@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+    <div class="dashboard">
+
+        <div class="dashboard-header">
+
+            <h1>My Course</h1>
+
+            <button id="logoutBtn" class="logout-btn">
+                Logout
+            </button>
+
+        </div>
+
+
+        <div class="course-container">
+
+            <h2>Java Programming Course</h2>
+
+            <div class="lesson-card">
+
+                <h3>Lesson 1 - Introduction to Java</h3>
+
+                <p>
+                    Learn the basics of Java programming.
+                </p>
+
+                <a
+                    href="https://www.jioaicloud.com/l/?u=akK73jVEtiZqub9H9-QT9kvCE9rBlpTWo-Rspt76jY8p_P5HrRecuaQzH32T2HPMOe"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="watch-btn"
+                >
+                    ▶ Watch Video
+                </a>
+
+            </div>
+
+
+            <div class="lesson-card">
+
+                <h3>Lesson 2 - Variables and Data Types</h3>
+
+                <p>
+                    Learn variables and different data types.
+                </p>
+
+                <a
+                    href="YOUR_JIOCLOUD_LESSON_2_LINK"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="watch-btn"
+                >
+                    ▶ Watch Video
+                </a>
+
+            </div>
+
+
+            <div class="lesson-card">
+
+                <h3>Lesson 3 - Object Oriented Programming</h3>
+
+                <p>
+                    Learn OOP concepts in Java.
+                </p>
+
+                <a
+                    href="YOUR_JIOCLOUD_LESSON_3_LINK"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="watch-btn"
+                >
+                    ▶ Watch Video
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script>
+
+        // Check login
+        if (sessionStorage.getItem("loggedIn") !== "true") {
+
+            window.location.href = "index.html";
+
+        }
+
+
+        // Logout
+        document
+            .getElementById("logoutBtn")
+            .addEventListener("click", function () {
+
+                sessionStorage.removeItem("loggedIn");
+
+                window.location.href = "index.html";
+
+            });
+
+    </script>
+
+</body>
+
+</html>
