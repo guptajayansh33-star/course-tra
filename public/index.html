@@ -3,57 +3,240 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Premium Learning — Explore industry-grade programming courses designed by top engineers. Start your journey today.">
 
-    <title>Course Login</title>
+    <title>Explore Courses — Premium Learning</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body>
+<body class="landing-page">
 
-    <div class="login-container">
+    <!-- Animated Background -->
+    <div class="bg-animation">
+        <div class="bg-gradient"></div>
+        <div class="bg-orb bg-orb-1"></div>
+        <div class="bg-orb bg-orb-2"></div>
+        <div class="bg-orb bg-orb-3"></div>
+        <div class="bg-orb bg-orb-4"></div>
+        <div class="particles" id="particles"></div>
+    </div>
 
-        <div class="login-box">
+    <div class="landing-wrapper">
 
-            <h1>Course Login</h1>
-
-            <form id="loginForm">
-
-                <div class="form-group">
-                    <label for="username">Username</label>
-
-                    <input
-                        type="text"
-                        id="username"
-                        placeholder="Enter username"
-                        required
-                    >
+        <!-- Top Navigation Bar -->
+        <nav class="landing-nav" id="landingNav">
+            <div class="nav-left">
+                <div class="nav-brand">
+                    <div class="nav-logo">
+                        <svg width="32" height="32" viewBox="0 0 40 40" fill="none">
+                            <defs>
+                                <linearGradient id="navLogoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#a855f7"/>
+                                    <stop offset="100%" style="stop-color:#6366f1"/>
+                                </linearGradient>
+                            </defs>
+                            <rect x="2" y="2" width="36" height="36" rx="10" fill="url(#navLogoGrad)"/>
+                            <path d="M12 14L20 10L28 14V22L20 26L12 22V14Z" fill="white" opacity="0.9"/>
+                            <path d="M20 18L28 14" stroke="white" stroke-width="1.5" opacity="0.5"/>
+                            <path d="M20 18V26" stroke="white" stroke-width="1.5" opacity="0.5"/>
+                            <path d="M20 18L12 14" stroke="white" stroke-width="1.5" opacity="0.5"/>
+                        </svg>
+                    </div>
+                    <span class="nav-title">Premium Learning</span>
                 </div>
+            </div>
+            <div class="nav-right">
+                <a href="login.html" class="nav-login-btn" id="navLoginBtn">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/>
+                        <polyline points="10 17 15 12 10 7"/>
+                        <line x1="15" y1="12" x2="3" y2="12"/>
+                    </svg>
+                    <span>Sign In</span>
+                </a>
+            </div>
+        </nav>
 
-                <div class="form-group">
-                    <label for="password">Password</label>
+        <!-- Hero Section -->
+        <section class="landing-hero" id="landingHero">
+            <div class="hero-content">
+                <span class="greeting-tag">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+                    </svg>
+                    Premium Courses
+                </span>
+                <h1>Master Programming<br>with Expert-Led Courses</h1>
+                <p class="hero-desc">Unlock your potential with our curated, industry-grade curriculum. Learn from top engineers and build real-world skills that matter.</p>
+            </div>
+        </section>
 
-                    <input
-                        type="password"
-                        id="password"
-                        placeholder="Enter password"
-                        required
-                    >
-                </div>
-
-                <button type="submit" class="login-btn">
-                    Login
-                </button>
-
-                <p id="errorMessage"></p>
-
-            </form>
-
+        <!-- Login Required Toast (hidden by default) -->
+        <div class="login-toast" id="loginToast">
+            <div class="toast-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                    <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                </svg>
+            </div>
+            <div class="toast-content">
+                <span class="toast-title">Login Required</span>
+                <span class="toast-message">Please sign in to access the course content</span>
+            </div>
+            <button class="toast-action" onclick="window.location.href='login.html'">
+                Sign In
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"/>
+                    <polyline points="12 5 19 12 12 19"/>
+                </svg>
+            </button>
+            <button class="toast-close" id="toastClose" aria-label="Close notification">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"/>
+                    <line x1="6" y1="6" x2="18" y2="18"/>
+                </svg>
+            </button>
         </div>
+
+        <!-- Courses Section -->
+        <section class="courses-section" id="coursesSection">
+            <div class="section-header">
+                <h2>
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+                        <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+                    </svg>
+                    Available Courses
+                </h2>
+            </div>
+
+            <div class="courses-grid">
+
+                <!-- Course Card 1: Java Programming -->
+                <div class="course-card" id="courseCard1" style="--delay: 0.1s">
+                    <div class="course-image-wrapper">
+                        <img src="images/java-course.jpg" alt="Java Programming Course" class="course-image" loading="lazy">
+                        <div class="course-image-overlay"></div>
+                        <div class="course-badge">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                            </svg>
+                            Featured
+                        </div>
+                    </div>
+                    <div class="course-body">
+                        <div class="course-tags">
+                            <span class="course-tag tag-beginner">Beginner</span>
+                            <span class="course-tag tag-intermediate">Intermediate</span>
+                            <span class="course-tag tag-advanced">Advanced</span>
+                        </div>
+                        <h3 class="course-title">Java Programming Course</h3>
+                        <p class="course-desc">Master the art of Java programming with our comprehensive, industry-grade curriculum. From basics to OOP, covering variables, data types, and advanced concepts.</p>
+                        <div class="course-meta">
+                            <div class="meta-item">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+                                    <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+                                </svg>
+                                <span>3 Lessons</span>
+                            </div>
+                            <div class="meta-item">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"/>
+                                    <polyline points="12 6 12 12 16 14"/>
+                                </svg>
+                                <span>6 Hours</span>
+                            </div>
+                            <div class="meta-item">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                                </svg>
+                                <span>All Levels</span>
+                            </div>
+                        </div>
+                        <button class="go-to-course-btn" id="goToCourseBtnJava" onclick="handleGoToCourse()">
+                            <span class="btn-text">Go to Course</span>
+                            <svg class="btn-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="5" y1="12" x2="19" y2="12"/>
+                                <polyline points="12 5 19 12 12 19"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="dash-footer" id="landingFooter">
+            <p>© 2026 Premium Learning. All rights reserved.</p>
+        </footer>
 
     </div>
 
-    <script src="js/script.js"></script>
+    <script>
+        // Handle "Go to Course" button click
+        function handleGoToCourse() {
+            // Check if user is logged in
+            if (sessionStorage.getItem("loggedIn") === "true") {
+                window.location.href = "dashboard.html";
+            } else {
+                showLoginToast();
+            }
+        }
+
+        // Show login required toast
+        function showLoginToast() {
+            const toast = document.getElementById('loginToast');
+            toast.classList.add('show');
+
+            // Auto-hide after 6 seconds
+            setTimeout(function() {
+                toast.classList.remove('show');
+            }, 6000);
+        }
+
+        // Close toast
+        document.getElementById('toastClose').addEventListener('click', function() {
+            document.getElementById('loginToast').classList.remove('show');
+        });
+
+        // Floating particles
+        function createParticles() {
+            const container = document.getElementById('particles');
+            if (!container) return;
+            for (let i = 0; i < 30; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.top = Math.random() * 100 + '%';
+                particle.style.width = (Math.random() * 4 + 1) + 'px';
+                particle.style.height = particle.style.width;
+                particle.style.animationDelay = (Math.random() * 8) + 's';
+                particle.style.animationDuration = (Math.random() * 10 + 8) + 's';
+                container.appendChild(particle);
+            }
+        }
+        createParticles();
+
+        // Entrance animations
+        window.addEventListener('load', function() {
+            document.getElementById('landingNav').classList.add('animate-in');
+            document.getElementById('landingHero').classList.add('animate-in');
+
+            const cards = document.querySelectorAll('.course-card');
+            cards.forEach(function(card, index) {
+                setTimeout(function() {
+                    card.classList.add('animate-in');
+                }, 300 + (index * 200));
+            });
+        });
+    </script>
 
 </body>
 </html>

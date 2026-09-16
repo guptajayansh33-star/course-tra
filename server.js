@@ -81,6 +81,15 @@ app.post("/login", (req, res) => {
 });
 
 // Start server
-app.listen(PORT, () => {
+const server = app.listen(PORT, () => {
     console.log(`Server running at http://localhost:${PORT}`);
+});
+
+server.on("error", (err) => {
+    if (err.code === "EADDRINUSE") {
+        console.error(`Port ${PORT} is already in use. Please close the other process or use a different port.`);
+    } else {
+        console.error("Server error:", err);
+    }
+    process.exit(1);
 });

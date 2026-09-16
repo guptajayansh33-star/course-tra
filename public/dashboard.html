@@ -5,107 +5,253 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Your premium Java programming course dashboard. Access all your lessons and track your progress.">
 
-    <title>Dashboard</title>
+    <title>Dashboard — Premium Learning</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="css/style.css">
 
 </head>
 
-<body>
+<body class="dashboard-page">
+
+    <!-- Subtle Background -->
+    <div class="dashboard-bg">
+        <div class="dash-bg-orb dash-bg-orb-1"></div>
+        <div class="dash-bg-orb dash-bg-orb-2"></div>
+    </div>
 
     <div class="dashboard">
 
-        <div class="dashboard-header">
+        <!-- Top Navigation Bar -->
+        <nav class="dashboard-nav" id="dashNav">
+            <div class="nav-left">
+                <div class="nav-brand">
+                    <div class="nav-logo">
+                        <svg width="32" height="32" viewBox="0 0 40 40" fill="none">
+                            <defs>
+                                <linearGradient id="navLogoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#a855f7"/>
+                                    <stop offset="100%" style="stop-color:#6366f1"/>
+                                </linearGradient>
+                            </defs>
+                            <rect x="2" y="2" width="36" height="36" rx="10" fill="url(#navLogoGrad)"/>
+                            <path d="M12 14L20 10L28 14V22L20 26L12 22V14Z" fill="white" opacity="0.9"/>
+                            <path d="M20 18L28 14" stroke="white" stroke-width="1.5" opacity="0.5"/>
+                            <path d="M20 18V26" stroke="white" stroke-width="1.5" opacity="0.5"/>
+                            <path d="M20 18L12 14" stroke="white" stroke-width="1.5" opacity="0.5"/>
+                        </svg>
+                    </div>
+                    <span class="nav-title">Premium Learning</span>
+                </div>
+            </div>
+            <div class="nav-right">
+                <div class="nav-user">
+                    <div class="user-avatar" id="userAvatar">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                            <circle cx="12" cy="7" r="4"/>
+                        </svg>
+                    </div>
+                    <span class="user-name">Student</span>
+                </div>
+                <button id="logoutBtn" class="logout-btn">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/>
+                        <polyline points="16 17 21 12 16 7"/>
+                        <line x1="21" y1="12" x2="9" y2="12"/>
+                    </svg>
+                    <span>Logout</span>
+                </button>
+            </div>
+        </nav>
 
-            <h1>My Course</h1>
+        <!-- Hero Welcome Section -->
+        <section class="dash-hero" id="dashHero">
+            <div class="hero-content">
+                <div class="hero-greeting">
+                    <span class="greeting-tag">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+                        </svg>
+                        Active Course
+                    </span>
+                    <h1>Java Programming Course</h1>
+                    <p class="hero-desc">Master the art of Java programming with our comprehensive, industry-grade curriculum designed by top engineers.</p>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-card">
+                        <div class="stat-icon stat-icon-lessons">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+                                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+                            </svg>
+                        </div>
+                        <div class="stat-info">
+                            <span class="stat-number">3</span>
+                            <span class="stat-label">Lessons</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon stat-icon-time">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <polyline points="12 6 12 12 16 14"/>
+                            </svg>
+                        </div>
+                        <div class="stat-info">
+                            <span class="stat-number">6h</span>
+                            <span class="stat-label">Content</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon stat-icon-level">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                            </svg>
+                        </div>
+                        <div class="stat-info">
+                            <span class="stat-number">All</span>
+                            <span class="stat-label">Levels</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-            <button id="logoutBtn" class="logout-btn">
-                Logout
-            </button>
-
-        </div>
-
-
-        <div class="course-container">
-
-            <h2>Java Programming Course</h2>
-
-            <div class="lesson-card">
-
-                <h3>Lesson 1 - Introduction to Java</h3>
-
-                <p>
-                    Learn the basics of Java programming.
-                </p>
-
-                <a
-                    href="https://www.jioaicloud.com/l/?u=dcJ6oKmxuiU_iWCUCjEoXLarCeEt147EHjJFL3PlhZ0Wryada2WyghaaZGHhs_HDdoB"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="watch-btn"
-                >
-                    ▶ Watch Video
-                </a>
-
+        <!-- Course Content -->
+        <section class="course-section">
+            <div class="section-header">
+                <h2>
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polygon points="5 3 19 12 5 21 5 3"/>
+                    </svg>
+                    Course Lessons
+                </h2>
+                <span class="lesson-count">3 Lessons</span>
             </div>
 
+            <div class="course-container">
 
-            <div class="lesson-card">
+                <div class="lesson-card" style="--delay: 0.1s">
+                    <div class="lesson-number">01</div>
+                    <div class="lesson-content">
+                        <div class="lesson-meta">
+                            <span class="lesson-tag tag-beginner">Beginner</span>
+                            <span class="lesson-duration">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"/>
+                                    <polyline points="12 6 12 12 16 14"/>
+                                </svg>
+                                ~26 min
+                            </span>
+                        </div>
+                        <h3>Module 1: Price Action Fundamentals</h3>
+                        <p>Learn the basics of price action, understand candlestick patterns, identify market trends, and analyze support and resistance levels.</p>
+                        <div class="lesson-actions">
+                            <a
+                                href="https://www.jioaicloud.com/l/?u=AFKRlltxRWhcRM8vtljDjt1aU-H8965yb0iu7zL7mMmG3hZtY4KDalpMPKQCYlg2PuU"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="watch-btn"
+                            >
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                    <polygon points="5 3 19 12 5 21 5 3"/>
+                                </svg>
+                                Watch Video
+                            </a>
+                        </div>
+                    </div>
+                </div>
 
-                <h3>Lesson 2 - Variables and Data Types</h3>
+                <div class="lesson-card" style="--delay: 0.2s">
+                    <div class="lesson-number">02</div>
+                    <div class="lesson-content">
+                        <div class="lesson-meta">
+                            <span class="lesson-tag tag-intermediate">Intermediate</span>
+                            <span class="lesson-duration">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"/>
+                                    <polyline points="12 6 12 12 16 14"/>
+                                </svg>
+                                ~15 min
+                            </span>
+                        </div>
+                        <h3>Module 2: My Trading Setup</h3>
+                        <p>Learn how to build your trading setup, choose the right tools and indicators, configure your charts, and create a structured trading environment.</p>
+                        <div class="lesson-actions">
+                            <a
+                                href="https://www.jioaicloud.com/l/?u=oS2LWZde4F--aTzFYDnQhv0MlMMlp1utruKBbHabRvppD5HTr70n98eupnBVJTS3hIb"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="watch-btn"
+                            >
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                    <polygon points="5 3 19 12 5 21 5 3"/>
+                                </svg>
+                                Watch Video
+                            </a>
+                        </div>
+                    </div>
+                </div>
 
-                <p>
-                    Learn variables and different data types.
-                </p>
-
-                <a
-                    href="YOUR_JIOCLOUD_LESSON_2_LINK"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="watch-btn"
-                >
-                    ▶ Watch Video
-                </a>
+                <!-- <div class="lesson-card" style="--delay: 0.3s">
+                    <div class="lesson-number">03</div>
+                    <div class="lesson-content">
+                        <div class="lesson-meta">
+                            <span class="lesson-tag tag-advanced">Advanced</span>
+                            <span class="lesson-duration">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"/>
+                                    <polyline points="12 6 12 12 16 14"/>
+                                </svg>
+                                ~2 hrs
+                            </span>
+                        </div>
+                        <h3>Object Oriented Programming</h3>
+                        <p>Master OOP concepts — classes, objects, inheritance, polymorphism, encapsulation, and abstraction.</p>
+                        <div class="lesson-actions">
+                            <a
+                                href="YOUR_JIOCLOUD_LESSON_3_LINK"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="watch-btn"
+                            >
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                    <polygon points="5 3 19 12 5 21 5 3"/>
+                                </svg>
+                                Watch Video
+                            </a>
+                        </div>
+                    </div>
+                </div> -->
 
             </div>
+        </section>
 
-
-            <div class="lesson-card">
-
-                <h3>Lesson 3 - Object Oriented Programming</h3>
-
-                <p>
-                    Learn OOP concepts in Java.
-                </p>
-
-                <a
-                    href="YOUR_JIOCLOUD_LESSON_3_LINK"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="watch-btn"
-                >
-                    ▶ Watch Video
-                </a>
-
-            </div>
-
-        </div>
+        <!-- Footer -->
+        <footer class="dash-footer">
+            <p>© 2026 Premium Learning. All rights reserved.</p>
+        </footer>
 
     </div>
 
 
     <script>
 
-        // Check login
+        // Check login — SAME LOGIC AS ORIGINAL
         if (sessionStorage.getItem("loggedIn") !== "true") {
 
-            window.location.href = "index.html";
+            window.location.href = "login.html";
 
         }
 
 
-        // Logout
+        // Logout — SAME LOGIC AS ORIGINAL
         document
             .getElementById("logoutBtn")
             .addEventListener("click", function () {
@@ -115,6 +261,19 @@
                 window.location.href = "index.html";
 
             });
+
+        // Entrance animations
+        window.addEventListener('load', function() {
+            document.getElementById('dashNav').classList.add('animate-in');
+            document.getElementById('dashHero').classList.add('animate-in');
+
+            const cards = document.querySelectorAll('.lesson-card');
+            cards.forEach(function(card, index) {
+                setTimeout(function() {
+                    card.classList.add('animate-in');
+                }, 200 + (index * 150));
+            });
+        });
 
     </script>
 
