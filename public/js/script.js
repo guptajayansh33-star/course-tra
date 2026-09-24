@@ -1,36 +1,31 @@
 const loginForm = document.getElementById("loginForm");
 
 if (loginForm) {
-
     loginForm.addEventListener("submit", async function (event) {
-
         event.preventDefault();
 
-        const username = document.getElementById("username").value;
+        const username = document.getElementById("username").value.trim();
         const password = document.getElementById("password").value;
 
         const errorMessage = document.getElementById("errorMessage");
         const loginBtn = document.getElementById("loginBtn");
-        const btnText = loginBtn.querySelector(".btn-text");
-        const btnArrow = loginBtn.querySelector(".btn-arrow");
-        const btnLoader = loginBtn.querySelector(".btn-loader");
+        const btnText = loginBtn ? loginBtn.querySelector(".btn-text") : null;
+        const btnArrow = loginBtn ? loginBtn.querySelector(".btn-arrow") : null;
+        const btnLoader = loginBtn ? loginBtn.querySelector(".btn-loader") : null;
 
         // Show loading state
-        loginBtn.disabled = true;
-        btnText.textContent = "Signing in...";
+        if (loginBtn) loginBtn.disabled = true;
+        if (btnText) btnText.textContent = "Signing in...";
         if (btnArrow) btnArrow.style.display = "none";
         if (btnLoader) btnLoader.style.display = "flex";
-        errorMessage.textContent = "";
+        if (errorMessage) errorMessage.textContent = "";
 
         try {
-
             const response = await fetch("/login", {
                 method: "POST",
-
                 headers: {
                     "Content-Type": "application/json"
                 },
-
                 body: JSON.stringify({
                     username: username,
                     password: password
@@ -40,29 +35,30 @@ if (loginForm) {
             const data = await response.json();
 
             if (data.success) {
-
-                // Login successful
+                // Login successful (SAME LOGIC)
                 sessionStorage.setItem("loggedIn", "true");
+                sessionStorage.setItem("currentUser", username);
 
                 // Success animation
-                btnText.textContent = "Welcome!";
-                loginBtn.style.background = "linear-gradient(135deg, #22c55e, #16a34a)";
+                if (btnText) btnText.textContent = "Welcome!";
+                if (loginBtn) loginBtn.style.background = "linear-gradient(135deg, #10b981, #059669)";
                 if (btnLoader) btnLoader.style.display = "none";
 
                 setTimeout(function() {
                     window.location.href = "dashboard.html";
-                }, 600);
+                }, 500);
 
             } else {
-
                 // Reset button
-                loginBtn.disabled = false;
-                btnText.textContent = "Sign In";
+                if (loginBtn) {
+                    loginBtn.disabled = false;
+                    loginBtn.style.background = "";
+                }
+                if (btnText) btnText.textContent = "Sign In";
                 if (btnArrow) btnArrow.style.display = "flex";
                 if (btnLoader) btnLoader.style.display = "none";
-                loginBtn.style.background = "";
 
-                errorMessage.textContent = data.message;
+                if (errorMessage) errorMessage.textContent = data.message || "Invalid username or password";
 
                 // Shake the login box on error
                 const loginBox = document.getElementById("loginBox");
@@ -71,24 +67,23 @@ if (loginForm) {
                     loginBox.offsetHeight; // trigger reflow
                     loginBox.style.animation = "shakeBox 0.5s ease-out";
                 }
-
             }
 
         } catch (error) {
-
             console.error(error);
 
             // Reset button
-            loginBtn.disabled = false;
-            btnText.textContent = "Sign In";
+            if (loginBtn) {
+                loginBtn.disabled = false;
+                loginBtn.style.background = "";
+            }
+            if (btnText) btnText.textContent = "Sign In";
             if (btnArrow) btnArrow.style.display = "flex";
             if (btnLoader) btnLoader.style.display = "none";
-            loginBtn.style.background = "";
 
-            errorMessage.textContent =
-                "Something went wrong. Please try again.";
-
+            if (errorMessage) {
+                errorMessage.textContent = "Something went wrong. Please try again.";
+            }
         }
-
     });
 }

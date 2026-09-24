@@ -2,24 +2,28 @@
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Your premium Java programming course dashboard. Access all your lessons and track your progress.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#05070c">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="description"
+        content="VIP Student Dashboard — Access your video masterclasses and track real-time progress.">
 
-    <title>Dashboard — Premium Learning</title>
+    <title>Course Tray</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
 
     <link rel="stylesheet" href="css/style.css">
-
 </head>
 
 <body class="dashboard-page">
 
-    <!-- Subtle Background -->
+    <!-- Subtle Background Ambient Glows -->
     <div class="dashboard-bg">
         <div class="dash-bg-orb dash-bg-orb-1"></div>
         <div class="dash-bg-orb dash-bg-orb-2"></div>
@@ -27,254 +31,1438 @@
 
     <div class="dashboard">
 
-        <!-- Top Navigation Bar -->
+        <!-- Mobile App Top Bar -->
         <nav class="dashboard-nav" id="dashNav">
             <div class="nav-left">
-                <div class="nav-brand">
+                <a href="dashboard.html" class="nav-brand">
                     <div class="nav-logo">
                         <svg width="32" height="32" viewBox="0 0 40 40" fill="none">
                             <defs>
                                 <linearGradient id="navLogoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                                    <stop offset="0%" style="stop-color:#a855f7"/>
-                                    <stop offset="100%" style="stop-color:#6366f1"/>
+                                    <stop offset="0%" style="stop-color:#a855f7" />
+                                    <stop offset="100%" style="stop-color:#6366f1" />
                                 </linearGradient>
                             </defs>
-                            <rect x="2" y="2" width="36" height="36" rx="10" fill="url(#navLogoGrad)"/>
-                            <path d="M12 14L20 10L28 14V22L20 26L12 22V14Z" fill="white" opacity="0.9"/>
-                            <path d="M20 18L28 14" stroke="white" stroke-width="1.5" opacity="0.5"/>
-                            <path d="M20 18V26" stroke="white" stroke-width="1.5" opacity="0.5"/>
-                            <path d="M20 18L12 14" stroke="white" stroke-width="1.5" opacity="0.5"/>
+                            <rect x="2" y="2" width="36" height="36" rx="10" fill="url(#navLogoGrad)" />
+                            <path d="M12 14L20 10L28 14V22L20 26L12 22V14Z" fill="white" opacity="0.95" />
+                            <path d="M20 18L28 14" stroke="white" stroke-width="1.5" opacity="0.6" />
+                            <path d="M20 18V26" stroke="white" stroke-width="1.5" opacity="0.6" />
+                            <path d="M20 18L12 14" stroke="white" stroke-width="1.5" opacity="0.6" />
                         </svg>
                     </div>
-                    <span class="nav-title">Premium Learning</span>
-                </div>
+                    <span class="nav-title">Course Dashboard</span>
+                </a>
             </div>
             <div class="nav-right">
                 <div class="nav-user">
-                    <div class="user-avatar" id="userAvatar">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-                            <circle cx="12" cy="7" r="4"/>
-                        </svg>
-                    </div>
-                    <span class="user-name">Student</span>
+                    <div class="user-avatar" id="userAvatar">S</div>
+                    <span class="user-name" id="userNameDisplay">Student</span>
                 </div>
                 <button id="logoutBtn" class="logout-btn">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/>
-                        <polyline points="16 17 21 12 16 7"/>
-                        <line x1="21" y1="12" x2="9" y2="12"/>
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
+                        <polyline points="16 17 21 12 16 7" />
+                        <line x1="21" y1="12" x2="9" y2="12" />
                     </svg>
                     <span>Logout</span>
                 </button>
             </div>
         </nav>
 
-        <!-- Hero Welcome Section -->
+        <!-- VIP Hero Card -->
         <section class="dash-hero" id="dashHero">
             <div class="hero-content">
                 <div class="hero-greeting">
                     <span class="greeting-tag">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+                            <polygon
+                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
                         </svg>
-                        Active Course
+                        Active Member
                     </span>
-                    <h1>Java Programming Course</h1>
-                    <p class="hero-desc">Master the art of Java programming with our comprehensive, industry-grade curriculum designed by top engineers.</p>
+                    <h1 id="welcomeHeading">Price Action Mastery</h1>
+                    <p class="hero-desc">Watch HD lessons, track completed setups, and master price action execution.
+                    </p>
                 </div>
+
+                <!-- 3-Column Mobile Stats -->
                 <div class="hero-stats">
                     <div class="stat-card">
                         <div class="stat-icon stat-icon-lessons">
-                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
-                                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5">
+                                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+                                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
                             </svg>
                         </div>
-                        <div class="stat-info">
-                            <span class="stat-number">3</span>
-                            <span class="stat-label">Lessons</span>
-                        </div>
+                        <span class="stat-number">29</span>
+                        <span class="stat-label">Modules</span>
                     </div>
+
                     <div class="stat-card">
                         <div class="stat-icon stat-icon-time">
-                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <circle cx="12" cy="12" r="10"/>
-                                <polyline points="12 6 12 12 16 14"/>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5">
+                                <circle cx="12" cy="12" r="10" />
+                                <polyline points="12 6 12 12 16 14" />
                             </svg>
                         </div>
-                        <div class="stat-info">
-                            <span class="stat-number">6h</span>
-                            <span class="stat-label">Content</span>
-                        </div>
+                        <span class="stat-number">~7.1h</span>
+                        <span class="stat-label">Duration</span>
                     </div>
+
                     <div class="stat-card">
                         <div class="stat-icon stat-icon-level">
-                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <polygon
+                                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
                             </svg>
                         </div>
-                        <div class="stat-info">
-                            <span class="stat-number">All</span>
-                            <span class="stat-label">Levels</span>
-                        </div>
+                        <span class="stat-number">PRO</span>
+                        <span class="stat-label">Access</span>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Course Content -->
-        <section class="course-section">
+        <!-- Course Progress Card (Interactive Mobile) -->
+        <section class="course-progress-card" id="courseProgressCard">
+            <div class="progress-info-left">
+                <div class="progress-trophy-icon">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2.2">
+                        <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6" />
+                        <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18" />
+                        <path d="M4 22h16" />
+                        <path d="M10 14.66V17c0 .55-.45 1-1 1H7.5" />
+                        <path d="M14 14.66V17c0 .55.45 1 1 1h1.5" />
+                        <path d="M18 2H6v7a6 6 0 0 0 12 0V2Z" />
+                    </svg>
+                </div>
+                <div class="progress-title-text">
+                    <h3 id="progressHeaderTitle">Course Progress</h3>
+                    <p id="progressStatusText">0 of 29 Modules Completed</p>
+                </div>
+            </div>
+
+            <div class="progress-bar-block">
+                <div class="progress-header-row">
+                    <span>Mastery Level</span>
+                    <span class="progress-percent-label" id="progressPercentLabel">0%</span>
+                </div>
+                <div class="progress-track">
+                    <div class="progress-fill" id="progressBarFill"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mobile Instant Search -->
+        <div class="dashboard-search-bar">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8" />
+                <line x1="21" y1="21" x2="16.65" y2="16.65" />
+            </svg>
+            <input type="text" id="lessonSearchInput" class="dashboard-search-input"
+                placeholder="Search lessons and topics...">
+        </div>
+
+        <!-- Course Content Section -->
+        <section class="course-section" id="courseSection">
             <div class="section-header">
                 <h2>
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <polygon points="5 3 19 12 5 21 5 3"/>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2.5">
+                        <polygon points="5 3 19 12 5 21 5 3" />
                     </svg>
-                    Course Lessons
+                    Masterclass Lessons
                 </h2>
-                <span class="lesson-count">3 Lessons</span>
+                <span class="lesson-count" id="lessonBadgeCount">29 Modules</span>
             </div>
 
-            <div class="course-container">
+            <div class="course-container" id="lessonsContainer">
 
-                <div class="lesson-card" style="--delay: 0.1s">
-                    <div class="lesson-number">01</div>
-                    <div class="lesson-content">
-                        <div class="lesson-meta">
-                            <span class="lesson-tag tag-beginner">Beginner</span>
-                            <span class="lesson-duration">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <circle cx="12" cy="12" r="10"/>
-                                    <polyline points="12 6 12 12 16 14"/>
-                                </svg>
-                                ~26 min
-                            </span>
+                <!-- Module 1 -->
+                <div class="lesson-card" id="lessonCard1" data-lesson-id="1">
+                    <div class="lesson-card-header">
+                        <div class="lesson-number">01</div>
+                        <div class="lesson-content">
+                            <div class="lesson-meta">
+                                <span class="lesson-tag tag-beginner">Price Action</span>
+                                <span class="lesson-duration">
+                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <circle cx="12" cy="12" r="10" />
+                                        <polyline points="12 6 12 12 16 14" />
+                                    </svg>
+                                    ~26 min
+                                </span>
+                            </div>
+                            <h3>Module 1: Price Action Fundamentals</h3>
+                            <p>Learn candlestick patterns, market trends, and key support & resistance zones.</p>
                         </div>
-                        <h3>Module 1: Price Action Fundamentals</h3>
-                        <p>Learn the basics of price action, understand candlestick patterns, identify market trends, and analyze support and resistance levels.</p>
-                        <div class="lesson-actions">
-                            <a
-                                href="https://www.jioaicloud.com/l/?u=AFKRlltxRWhcRM8vtljDjt1aU-H8965yb0iu7zL7mMmG3hZtY4KDalpMPKQCYlg2PuU"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                class="watch-btn"
-                            >
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                                    <polygon points="5 3 19 12 5 21 5 3"/>
-                                </svg>
-                                Watch Video
-                            </a>
-                        </div>
+                    </div>
+                    <div class="lesson-actions">
+                        <a href="https://www.jioaicloud.com/l/?u=AFKRlltxRWhcRM8vtljDjt1aU-H8965yb0iu7zL7mMmG3hZtY4KDalpMPKQCYlg2PuU"
+                            target="_blank" rel="noopener noreferrer" class="watch-btn">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                                <polygon points="5 3 19 12 5 21 5 3" />
+                            </svg>
+                            <span>Watch Module 1</span>
+                        </a>
+                        <button class="complete-btn-toggle" onclick="toggleLessonDone('1')">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5">
+                                <polyline points="20 6 9 17 4 12" />
+                            </svg>
+                            <span class="toggle-text">Mark Done</span>
+                        </button>
                     </div>
                 </div>
 
-                <div class="lesson-card" style="--delay: 0.2s">
-                    <div class="lesson-number">02</div>
-                    <div class="lesson-content">
-                        <div class="lesson-meta">
-                            <span class="lesson-tag tag-intermediate">Intermediate</span>
-                            <span class="lesson-duration">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <circle cx="12" cy="12" r="10"/>
-                                    <polyline points="12 6 12 12 16 14"/>
-                                </svg>
-                                ~15 min
-                            </span>
+                <!-- Module 2 -->
+                <div class="lesson-card" id="lessonCard2" data-lesson-id="2">
+                    <div class="lesson-card-header">
+                        <div class="lesson-number">02</div>
+                        <div class="lesson-content">
+                            <div class="lesson-meta">
+                                <span class="lesson-tag tag-intermediate">Strategy Setup</span>
+                                <span class="lesson-duration">
+                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <circle cx="12" cy="12" r="10" />
+                                        <polyline points="12 6 12 12 16 14" />
+                                    </svg>
+                                    ~15 min
+                                </span>
+                            </div>
+                            <h3>Module 2: My Trading Setup</h3>
+                            <p>Configure trading tools, chart indicators, and build a high-probability trading
+                                workstation.</p>
                         </div>
-                        <h3>Module 2: My Trading Setup</h3>
-                        <p>Learn how to build your trading setup, choose the right tools and indicators, configure your charts, and create a structured trading environment.</p>
-                        <div class="lesson-actions">
-                            <a
-                                href="https://www.jioaicloud.com/l/?u=oS2LWZde4F--aTzFYDnQhv0MlMMlp1utruKBbHabRvppD5HTr70n98eupnBVJTS3hIb"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                class="watch-btn"
-                            >
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                                    <polygon points="5 3 19 12 5 21 5 3"/>
-                                </svg>
-                                Watch Video
-                            </a>
-                        </div>
+                    </div>
+                    <div class="lesson-actions">
+                        <a href="https://www.jioaicloud.com/l/?u=oS2LWZde4F--aTzFYDnQhv0MlMMlp1utruKBbHabRvppD5HTr70n98eupnBVJTS3hIb"
+                            target="_blank" rel="noopener noreferrer" class="watch-btn">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                                <polygon points="5 3 19 12 5 21 5 3" />
+                            </svg>
+                            <span>Watch Module 2</span>
+                        </a>
+                        <button class="complete-btn-toggle" onclick="toggleLessonDone('2')">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5">
+                                <polyline points="20 6 9 17 4 12" />
+                            </svg>
+                            <span class="toggle-text">Mark Done</span>
+                        </button>
                     </div>
                 </div>
 
-                <!-- <div class="lesson-card" style="--delay: 0.3s">
-                    <div class="lesson-number">03</div>
-                    <div class="lesson-content">
-                        <div class="lesson-meta">
-                            <span class="lesson-tag tag-advanced">Advanced</span>
-                            <span class="lesson-duration">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <circle cx="12" cy="12" r="10"/>
-                                    <polyline points="12 6 12 12 16 14"/>
-                                </svg>
-                                ~2 hrs
-                            </span>
-                        </div>
-                        <h3>Object Oriented Programming</h3>
-                        <p>Master OOP concepts — classes, objects, inheritance, polymorphism, encapsulation, and abstraction.</p>
-                        <div class="lesson-actions">
-                            <a
-                                href="YOUR_JIOCLOUD_LESSON_3_LINK"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                class="watch-btn"
-                            >
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                                    <polygon points="5 3 19 12 5 21 5 3"/>
-                                </svg>
-                                Watch Video
-                            </a>
+                <!-- Module 3 -->
+                <div class="lesson-card" id="lessonCard3" data-lesson-id="3">
+                    <div class="lesson-card-header">
+                        <div class="lesson-number">03</div>
+                        <div class="lesson-content">
+                            <div class="lesson-meta">
+                                <span class="lesson-tag tag-beginner">Psychology</span>
+                                <span class="lesson-duration">
+                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <circle cx="12" cy="12" r="10" />
+                                        <polyline points="12 6 12 12 16 14" />
+                                    </svg>
+                                    ~15 min
+                                </span>
+                            </div>
+                            <h3>Module 3: Traders Personality</h3>
+                            <p>Master trading psychology, emotional discipline, risk tolerance, and align your mindset with high-performance trading.</p>
                         </div>
                     </div>
-                </div> -->
+                    <div class="lesson-actions">
+                        <a href="https://www.jioaicloud.com/l/?u=mRYZWbMzKTnpqNPXTYAPi7c6xPb17pHITTEFo0xdalP2tgzQ4Lxu46dn262PidHbPrF"
+                            target="_blank" rel="noopener noreferrer" class="watch-btn">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                                <polygon points="5 3 19 12 5 21 5 3" />
+                            </svg>
+                            <span>Watch Module 3</span>
+                        </a>
+                        <button class="complete-btn-toggle" onclick="toggleLessonDone('3')">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5">
+                                <polyline points="20 6 9 17 4 12" />
+                            </svg>
+                            <span class="toggle-text">Mark Done</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Module 4 -->
+                <div class="lesson-card" id="lessonCard4" data-lesson-id="4">
+                    <div class="lesson-card-header">
+                        <div class="lesson-number">04</div>
+                        <div class="lesson-content">
+                            <div class="lesson-meta">
+                                <span class="lesson-tag tag-beginner">Foundation</span>
+                                <span class="lesson-duration">
+                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <circle cx="12" cy="12" r="10" />
+                                        <polyline points="12 6 12 12 16 14" />
+                                    </svg>
+                                    ~12 min
+                                </span>
+                            </div>
+                            <h3>Module 4: Beginner - How to Trade</h3>
+                            <p>Step-by-step foundation covering order placement, risk management rules, and seamless trade execution strategies.</p>
+                        </div>
+                    </div>
+                    <div class="lesson-actions">
+                        <a href="https://www.jioaicloud.com/l/?u=I48Z6N6F83T2y7NitNJV_vuJ3FHroURpISTpMmNAJV4V1KUIeHhlpGhnmaYCAshWNL3"
+                            target="_blank" rel="noopener noreferrer" class="watch-btn">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                                <polygon points="5 3 19 12 5 21 5 3" />
+                            </svg>
+                            <span>Watch Module 4</span>
+                        </a>
+                        <button class="complete-btn-toggle" onclick="toggleLessonDone('4')">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5">
+                                <polyline points="20 6 9 17 4 12" />
+                            </svg>
+                            <span class="toggle-text">Mark Done</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Module 5 -->
+                <div class="lesson-card" id="lessonCard5" data-lesson-id="5">
+                    <div class="lesson-card-header">
+                        <div class="lesson-number">05</div>
+                        <div class="lesson-content">
+                            <div class="lesson-meta">
+                                <span class="lesson-tag tag-intermediate">Market Cycles</span>
+                                <span class="lesson-duration">
+                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <circle cx="12" cy="12" r="10" />
+                                        <polyline points="12 6 12 12 16 14" />
+                                    </svg>
+                                    ~14 min
+                                </span>
+                            </div>
+                            <h3>Module 5: Identify Market Cycle - Master Market Movement</h3>
+                            <p>Understand accumulation, markup, distribution, and markdown phases to align your positions with institutional money flow.</p>
+                        </div>
+                    </div>
+                    <div class="lesson-actions">
+                        <a href="https://www.jioaicloud.com/l/?u=p3w9SD_kyEZPQCp8ZjSzXCffW9kSpWkqjLFXBiGh-llyi-EfkM7Rm7CdXPdKqHdtXPz"
+                            target="_blank" rel="noopener noreferrer" class="watch-btn">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                                <polygon points="5 3 19 12 5 21 5 3" />
+                            </svg>
+                            <span>Watch Module 5</span>
+                        </a>
+                        <button class="complete-btn-toggle" onclick="toggleLessonDone('5')">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5">
+                                <polyline points="20 6 9 17 4 12" />
+                            </svg>
+                            <span class="toggle-text">Mark Done</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Module 6 -->
+                <div class="lesson-card" id="lessonCard6" data-lesson-id="6">
+                    <div class="lesson-card-header">
+                        <div class="lesson-number">06</div>
+                        <div class="lesson-content">
+                            <div class="lesson-meta">
+                                <span class="lesson-tag tag-intermediate">Order Flow</span>
+                                <span class="lesson-duration">
+                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <circle cx="12" cy="12" r="10" />
+                                        <polyline points="12 6 12 12 16 14" />
+                                    </svg>
+                                    ~7 min
+                                </span>
+                            </div>
+                            <h3>Module 6: Pressure - How Strong is Buying and Selling?</h3>
+                            <p>Evaluate real-time buying and selling pressure, analyze candle strength, and spot institutional momentum before breakout.</p>
+                        </div>
+                    </div>
+                    <div class="lesson-actions">
+                        <a href="https://www.jioaicloud.com/l/?u=dwJw-fExX83sBiALw-e30Nz8UpAMY1bMfsU6mprDnvwKMjHbAluJM7MD-WQT5mDqVaU"
+                            target="_blank" rel="noopener noreferrer" class="watch-btn">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                                <polygon points="5 3 19 12 5 21 5 3" />
+                            </svg>
+                            <span>Watch Module 6</span>
+                        </a>
+                        <button class="complete-btn-toggle" onclick="toggleLessonDone('6')">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5">
+                                <polyline points="20 6 9 17 4 12" />
+                            </svg>
+                            <span class="toggle-text">Mark Done</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Module 7 -->
+                <div class="lesson-card" id="lessonCard7" data-lesson-id="7">
+                    <div class="lesson-card-header">
+                        <div class="lesson-number">07</div>
+                        <div class="lesson-content">
+                            <div class="lesson-meta">
+                                <span class="lesson-tag tag-advanced">Reversals</span>
+                                <span class="lesson-duration">
+                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <circle cx="12" cy="12" r="10" />
+                                        <polyline points="12 6 12 12 16 14" />
+                                    </svg>
+                                    ~12 min
+                                </span>
+                            </div>
+                            <h3>Module 7: When to change trading direction?</h3>
+                            <p>Identify trend exhaustion, failure swings, major liquidity sweeps, and precisely know when to flip your directional bias.</p>
+                        </div>
+                    </div>
+                    <div class="lesson-actions">
+                        <a href="https://www.jioaicloud.com/l/?u=U8FZC2Ac8XAQtPdF1YYCyAlw-RuXEFvbrWj8uwlbv49HioLHC-81oJjnRH5tvWO9PuU"
+                            target="_blank" rel="noopener noreferrer" class="watch-btn">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                                <polygon points="5 3 19 12 5 21 5 3" />
+                            </svg>
+                            <span>Watch Module 7</span>
+                        </a>
+                        <button class="complete-btn-toggle" onclick="toggleLessonDone('7')">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5">
+                                <polyline points="20 6 9 17 4 12" />
+                            </svg>
+                            <span class="toggle-text">Mark Done</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Module 8 -->
+                <div class="lesson-card" id="lessonCard8" data-lesson-id="8">
+                    <div class="lesson-card-header">
+                        <div class="lesson-number">08</div>
+                        <div class="lesson-content">
+                            <div class="lesson-meta">
+                                <span class="lesson-tag tag-advanced">Setups & Entries</span>
+                                <span class="lesson-duration">
+                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <circle cx="12" cy="12" r="10" />
+                                        <polyline points="12 6 12 12 16 14" />
+                                    </svg>
+                                    ~19 min
+                                </span>
+                            </div>
+                            <h3>Module 8: Setup, Signal and Entry Candles</h3>
+                            <p>Distinguish setup formation from trigger candles, optimize stop loss placing, and master sniper entry executions.</p>
+                        </div>
+                    </div>
+                    <div class="lesson-actions">
+                        <a href="https://www.jioaicloud.com/l/?u=15Gb4LOFBMtQEosxs9qAuTy-b1mI_0D4kHatSDgtCDk8EdtG907KTkC66gE5w77EMHW"
+                            target="_blank" rel="noopener noreferrer" class="watch-btn">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                                <polygon points="5 3 19 12 5 21 5 3" />
+                            </svg>
+                            <span>Watch Module 8</span>
+                        </a>
+                        <button class="complete-btn-toggle" onclick="toggleLessonDone('8')">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5">
+                                <polyline points="20 6 9 17 4 12" />
+                            </svg>
+                            <span class="toggle-text">Mark Done</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Module 9 -->
+                <div class="lesson-card" id="lessonCard9" data-lesson-id="9">
+                    <div class="lesson-card-header">
+                        <div class="lesson-number">09</div>
+                        <div class="lesson-content">
+                            <div class="lesson-meta">
+                                <span class="lesson-tag tag-advanced">Channels Strategy</span>
+                                <span class="lesson-duration">
+                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <circle cx="12" cy="12" r="10" />
+                                        <polyline points="12 6 12 12 16 14" />
+                                    </svg>
+                                    ~14 min
+                                </span>
+                            </div>
+                            <h3>Module 9: Trading Strategy for Channels</h3>
+                            <p>Proven strategies for ascending, descending, and horizontal price channels with precision boundary trading techniques.</p>
+                        </div>
+                    </div>
+                    <div class="lesson-actions">
+                        <a href="https://www.jioaicloud.com/l/?u=5JV2-COkoL-yc7rngwDK6AB1D15bsoFsoW5kCjygkXq9HPIJHU6V2K1div80K6RUjqE"
+                            target="_blank" rel="noopener noreferrer" class="watch-btn">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                                <polygon points="5 3 19 12 5 21 5 3" />
+                            </svg>
+                            <span>Watch Module 9</span>
+                        </a>
+                        <button class="complete-btn-toggle" onclick="toggleLessonDone('9')">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5">
+                                <polyline points="20 6 9 17 4 12" />
+                            </svg>
+                            <span class="toggle-text">Mark Done</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Module 10 -->
+                <div class="lesson-card" id="lessonCard10" data-lesson-id="10">
+                    <div class="lesson-card-header">
+                        <div class="lesson-number">10</div>
+                        <div class="lesson-content">
+                            <div class="lesson-meta">
+                                <span class="lesson-tag tag-advanced">Advanced Channels</span>
+                                <span class="lesson-duration">
+                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <circle cx="12" cy="12" r="10" />
+                                        <polyline points="12 6 12 12 16 14" />
+                                    </svg>
+                                    ~19 min
+                                </span>
+                            </div>
+                            <h3>Module 10: Trading Strategy for Channels Part-2</h3>
+                            <p>Advanced channel breakouts, false breakout traps, profit taking targets, and high-probability scale-in strategies.</p>
+                        </div>
+                    </div>
+                    <div class="lesson-actions">
+                        <a href="https://www.jioaicloud.com/l/?u=c4NIlJbajVEDxIPn5nx0-8Zk0EKP3t7bmVXpsJc8x3eSmCUBbdxCZ98P9cEVF6Vx8BX"
+                            target="_blank" rel="noopener noreferrer" class="watch-btn">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                                <polygon points="5 3 19 12 5 21 5 3" />
+                            </svg>
+                            <span>Watch Module 10</span>
+                        </a>
+                        <button class="complete-btn-toggle" onclick="toggleLessonDone('10')">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5">
+                                <polyline points="20 6 9 17 4 12" />
+                            </svg>
+                            <span class="toggle-text">Mark Done</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Module 11 -->
+                <div class="lesson-card" id="lessonCard11" data-lesson-id="11">
+                    <div class="lesson-card-header">
+                        <div class="lesson-number">11</div>
+                        <div class="lesson-content">
+                            <div class="lesson-meta">
+                                <span class="lesson-tag tag-intermediate">Ranges</span>
+                                <span class="lesson-duration">
+                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <circle cx="12" cy="12" r="10" />
+                                        <polyline points="12 6 12 12 16 14" />
+                                    </svg>
+                                    ~25 min
+                                </span>
+                            </div>
+                            <h3>Module 11: Trading Strategy for Trading Ranges</h3>
+                            <p>Master range-bound markets, identifying range boundaries, fade trading, and breakout trap setups.</p>
+                        </div>
+                    </div>
+                    <div class="lesson-actions">
+                        <a href="https://www.jioaicloud.com/l/?u=vZ5YbFbPNl5ZC2QNZ3eriOKvYcenxwK-94DY_0lMcO_Vs6tKMP8JGUPY0mSaQUlLdoB"
+                            target="_blank" rel="noopener noreferrer" class="watch-btn">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                                <polygon points="5 3 19 12 5 21 5 3" />
+                            </svg>
+                            <span>Watch Module 11</span>
+                        </a>
+                        <button class="complete-btn-toggle" onclick="toggleLessonDone('11')">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5">
+                                <polyline points="20 6 9 17 4 12" />
+                            </svg>
+                            <span class="toggle-text">Mark Done</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Module 12 -->
+                <div class="lesson-card" id="lessonCard12" data-lesson-id="12">
+                    <div class="lesson-card-header">
+                        <div class="lesson-number">12</div>
+                        <div class="lesson-content">
+                            <div class="lesson-meta">
+                                <span class="lesson-tag tag-advanced">Price Attraction</span>
+                                <span class="lesson-duration">
+                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <circle cx="12" cy="12" r="10" />
+                                        <polyline points="12 6 12 12 16 14" />
+                                    </svg>
+                                    ~11 min
+                                </span>
+                            </div>
+                            <h3>Module 12: Vacuums & Magnets</h3>
+                            <p>Learn how unfilled gaps, prior highs/lows, and moving averages act as price magnets and vacuum zones.</p>
+                        </div>
+                    </div>
+                    <div class="lesson-actions">
+                        <a href="https://www.jioaicloud.com/l/?u=rwUI9TR-bKTYWoWsXbbA2JPpAebTYa2G7OEy1npw-SdkmcvGHpZo3aKs-Lie_DA8NL3"
+                            target="_blank" rel="noopener noreferrer" class="watch-btn">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                                <polygon points="5 3 19 12 5 21 5 3" />
+                            </svg>
+                            <span>Watch Module 12</span>
+                        </a>
+                        <button class="complete-btn-toggle" onclick="toggleLessonDone('12')">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5">
+                                <polyline points="20 6 9 17 4 12" />
+                            </svg>
+                            <span class="toggle-text">Mark Done</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Module 13 -->
+                <div class="lesson-card" id="lessonCard13" data-lesson-id="13">
+                    <div class="lesson-card-header">
+                        <div class="lesson-number">13</div>
+                        <div class="lesson-content">
+                            <div class="lesson-meta">
+                                <span class="lesson-tag tag-intermediate">Price Reversals</span>
+                                <span class="lesson-duration">
+                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <circle cx="12" cy="12" r="10" />
+                                        <polyline points="12 6 12 12 16 14" />
+                                    </svg>
+                                    ~14 min
+                                </span>
+                            </div>
+                            <h3>Module 13: Reversals</h3>
+                            <p>Understand early market turning points, trend shift mechanics, and identifying valid reversal signatures.</p>
+                        </div>
+                    </div>
+                    <div class="lesson-actions">
+                        <a href="https://www.jioaicloud.com/l/?u=4q-HtB90jjjduSTMjIBGJJpAw4VEWd4qyx2hAFlOp3O0CVVFSyS-rEg2W1E-9WMCPuU"
+                            target="_blank" rel="noopener noreferrer" class="watch-btn">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                                <polygon points="5 3 19 12 5 21 5 3" />
+                            </svg>
+                            <span>Watch Module 13</span>
+                        </a>
+                        <button class="complete-btn-toggle" onclick="toggleLessonDone('13')">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5">
+                                <polyline points="20 6 9 17 4 12" />
+                            </svg>
+                            <span class="toggle-text">Mark Done</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Module 14 -->
+                <div class="lesson-card" id="lessonCard14" data-lesson-id="14">
+                    <div class="lesson-card-header">
+                        <div class="lesson-number">14</div>
+                        <div class="lesson-content">
+                            <div class="lesson-meta">
+                                <span class="lesson-tag tag-advanced">MTR Strategy</span>
+                                <span class="lesson-duration">
+                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <circle cx="12" cy="12" r="10" />
+                                        <polyline points="12 6 12 12 16 14" />
+                                    </svg>
+                                    ~11 min
+                                </span>
+                            </div>
+                            <h3>Module 14: Major Trend Reversal Trading Strategy</h3>
+                            <p>Execute high-probability Major Trend Reversals (MTR) with trendline breaks, retests, and momentum confirmation.</p>
+                        </div>
+                    </div>
+                    <div class="lesson-actions">
+                        <a href="https://www.jioaicloud.com/l/?u=hh4JiiGOK2CqWfKVRvI00qFEsK2C0j15TO-4wGgxY5pWbXXD0bF8vvMtnTY4GKGpOe5"
+                            target="_blank" rel="noopener noreferrer" class="watch-btn">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                                <polygon points="5 3 19 12 5 21 5 3" />
+                            </svg>
+                            <span>Watch Module 14</span>
+                        </a>
+                        <button class="complete-btn-toggle" onclick="toggleLessonDone('14')">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5">
+                                <polyline points="20 6 9 17 4 12" />
+                            </svg>
+                            <span class="toggle-text">Mark Done</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Module 15 -->
+                <div class="lesson-card" id="lessonCard15" data-lesson-id="15">
+                    <div class="lesson-card-header">
+                        <div class="lesson-number">15</div>
+                        <div class="lesson-content">
+                            <div class="lesson-meta">
+                                <span class="lesson-tag tag-intermediate">Wedge Patterns</span>
+                                <span class="lesson-duration">
+                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <circle cx="12" cy="12" r="10" />
+                                        <polyline points="12 6 12 12 16 14" />
+                                    </svg>
+                                    ~18 min
+                                </span>
+                            </div>
+                            <h3>Module 15: Wedges Trading Strategy</h3>
+                            <p>Trade rising and falling wedge patterns, 3-push exhaustion patterns, and high-probability reversal triggers.</p>
+                        </div>
+                    </div>
+                    <div class="lesson-actions">
+                        <a href="https://www.jioaicloud.com/l/?u=fwB14fQp5nGHYDTNz387Y60_5OHta5dO-BkRkjuu4wsCqSbsBcs6D3RQS2tXzWAlNL3"
+                            target="_blank" rel="noopener noreferrer" class="watch-btn">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                                <polygon points="5 3 19 12 5 21 5 3" />
+                            </svg>
+                            <span>Watch Module 15</span>
+                        </a>
+                        <button class="complete-btn-toggle" onclick="toggleLessonDone('15')">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5">
+                                <polyline points="20 6 9 17 4 12" />
+                            </svg>
+                            <span class="toggle-text">Mark Done</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Module 16 -->
+                <div class="lesson-card" id="lessonCard16" data-lesson-id="16">
+                    <div class="lesson-card-header">
+                        <div class="lesson-number">16</div>
+                        <div class="lesson-content">
+                            <div class="lesson-meta">
+                                <span class="lesson-tag tag-advanced">Final Flags</span>
+                                <span class="lesson-duration">
+                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <circle cx="12" cy="12" r="10" />
+                                        <polyline points="12 6 12 12 16 14" />
+                                    </svg>
+                                    ~12 min
+                                </span>
+                            </div>
+                            <h3>Module 16: Final Flags Trend Reversal Trading Strategy</h3>
+                            <p>Identify exhaustion flags at key support/resistance levels and profit from the subsequent trend reversals.</p>
+                        </div>
+                    </div>
+                    <div class="lesson-actions">
+                        <a href="https://www.jioaicloud.com/l/?u=VTqjeUJ3uABMn_eUF-mM35ddWaaWmQp7lWrEJjDiYRCWyFCLj1ttCqmJXhURpvpBNL3"
+                            target="_blank" rel="noopener noreferrer" class="watch-btn">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                                <polygon points="5 3 19 12 5 21 5 3" />
+                            </svg>
+                            <span>Watch Module 16</span>
+                        </a>
+                        <button class="complete-btn-toggle" onclick="toggleLessonDone('16')">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5">
+                                <polyline points="20 6 9 17 4 12" />
+                            </svg>
+                            <span class="toggle-text">Mark Done</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Module 17 -->
+                <div class="lesson-card" id="lessonCard17" data-lesson-id="17">
+                    <div class="lesson-card-header">
+                        <div class="lesson-number">17</div>
+                        <div class="lesson-content">
+                            <div class="lesson-meta">
+                                <span class="lesson-tag tag-beginner">Chart Patterns</span>
+                                <span class="lesson-duration">
+                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <circle cx="12" cy="12" r="10" />
+                                        <polyline points="12 6 12 12 16 14" />
+                                    </svg>
+                                    ~12 min
+                                </span>
+                            </div>
+                            <h3>Module 17: Double Top Double Bottom Trading Strategy</h3>
+                            <p>Master classic double top and double bottom setups, neckline breakouts, neckline retests, and target projections.</p>
+                        </div>
+                    </div>
+                    <div class="lesson-actions">
+                        <a href="https://www.jioaicloud.com/l/?u=r0X8mAbl7SIgqoUubKFVIyBChhQsZCcLrorCQvxUriTiraF2Wi88xW89_4EowhArjqE"
+                            target="_blank" rel="noopener noreferrer" class="watch-btn">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                                <polygon points="5 3 19 12 5 21 5 3" />
+                            </svg>
+                            <span>Watch Module 17</span>
+                        </a>
+                        <button class="complete-btn-toggle" onclick="toggleLessonDone('17')">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5">
+                                <polyline points="20 6 9 17 4 12" />
+                            </svg>
+                            <span class="toggle-text">Mark Done</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Module 18 -->
+                <div class="lesson-card" id="lessonCard18" data-lesson-id="18">
+                    <div class="lesson-card-header">
+                        <div class="lesson-number">18</div>
+                        <div class="lesson-content">
+                            <div class="lesson-meta">
+                                <span class="lesson-tag tag-intermediate">Triangles</span>
+                                <span class="lesson-duration">
+                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <circle cx="12" cy="12" r="10" />
+                                        <polyline points="12 6 12 12 16 14" />
+                                    </svg>
+                                    ~16 min
+                                </span>
+                            </div>
+                            <h3>Module 18: Triangles Trading Strategy</h3>
+                            <p>Learn ascending, descending, and symmetrical triangle setups with precise breakout validation techniques.</p>
+                        </div>
+                    </div>
+                    <div class="lesson-actions">
+                        <a href="https://www.jioaicloud.com/l/?u=QX69CY49ErLYvkv6B8wsc-qsWCA504jC3Fe6vBzGk-rRgrBnE0wDSeXrrelb-Jy7hIb"
+                            target="_blank" rel="noopener noreferrer" class="watch-btn">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                                <polygon points="5 3 19 12 5 21 5 3" />
+                            </svg>
+                            <span>Watch Module 18</span>
+                        </a>
+                        <button class="complete-btn-toggle" onclick="toggleLessonDone('18')">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5">
+                                <polyline points="20 6 9 17 4 12" />
+                            </svg>
+                            <span class="toggle-text">Mark Done</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Module 19 -->
+                <div class="lesson-card" id="lessonCard19" data-lesson-id="19">
+                    <div class="lesson-card-header">
+                        <div class="lesson-number">19</div>
+                        <div class="lesson-content">
+                            <div class="lesson-meta">
+                                <span class="lesson-tag tag-intermediate">Head & Shoulders</span>
+                                <span class="lesson-duration">
+                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <circle cx="12" cy="12" r="10" />
+                                        <polyline points="12 6 12 12 16 14" />
+                                    </svg>
+                                    ~8 min
+                                </span>
+                            </div>
+                            <h3>Module 19: Head and Shoulder Reversal Setup</h3>
+                            <p>Trade regular and inverted Head and Shoulders patterns, right-shoulder entries, and structural targets.</p>
+                        </div>
+                    </div>
+                    <div class="lesson-actions">
+                        <a href="https://www.jioaicloud.com/l/?u=5xP9urzWKkMk6TlDOc4wVBpCNdSRyg6GtWuo0hZbi9WCgc78OrrFpZl85T5aKU-ihkW"
+                            target="_blank" rel="noopener noreferrer" class="watch-btn">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                                <polygon points="5 3 19 12 5 21 5 3" />
+                            </svg>
+                            <span>Watch Module 19</span>
+                        </a>
+                        <button class="complete-btn-toggle" onclick="toggleLessonDone('19')">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5">
+                                <polyline points="20 6 9 17 4 12" />
+                            </svg>
+                            <span class="toggle-text">Mark Done</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Module 20 -->
+                <div class="lesson-card" id="lessonCard20" data-lesson-id="20">
+                    <div class="lesson-card-header">
+                        <div class="lesson-number">20</div>
+                        <div class="lesson-content">
+                            <div class="lesson-meta">
+                                <span class="lesson-tag tag-intermediate">Rounding Patterns</span>
+                                <span class="lesson-duration">
+                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <circle cx="12" cy="12" r="10" />
+                                        <polyline points="12 6 12 12 16 14" />
+                                    </svg>
+                                    ~6 min
+                                </span>
+                            </div>
+                            <h3>Module 20: Rounding Tops and Bottom Trading Strategy</h3>
+                            <p>Understand saucer/rounding bottoms and dome tops, accumulation accumulation transitions, and breakout entries.</p>
+                        </div>
+                    </div>
+                    <div class="lesson-actions">
+                        <a href="https://www.jioaicloud.com/l/?u=ttBGKLP4EeNbVWjtNbMlbHRHodx5vZOsym_OKXOVMIQSS8Gr3Efbbx1WRUTMZVgOVaU"
+                            target="_blank" rel="noopener noreferrer" class="watch-btn">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                                <polygon points="5 3 19 12 5 21 5 3" />
+                            </svg>
+                            <span>Watch Module 20</span>
+                        </a>
+                        <button class="complete-btn-toggle" onclick="toggleLessonDone('20')">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5">
+                                <polyline points="20 6 9 17 4 12" />
+                            </svg>
+                            <span class="toggle-text">Mark Done</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Module 21 -->
+                <div class="lesson-card" id="lessonCard21" data-lesson-id="21">
+                    <div class="lesson-card-header">
+                        <div class="lesson-number">21</div>
+                        <div class="lesson-content">
+                            <div class="lesson-meta">
+                                <span class="lesson-tag tag-advanced">Climatic Blowoffs</span>
+                                <span class="lesson-duration">
+                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <circle cx="12" cy="12" r="10" />
+                                        <polyline points="12 6 12 12 16 14" />
+                                    </svg>
+                                    ~12 min
+                                </span>
+                            </div>
+                            <h3>Module 21: Trading Strategy for Climatic Reversals</h3>
+                            <p>Identify buying and selling climaxes, capitulation volume spikes, and aggressive counter-trend reversal plays.</p>
+                        </div>
+                    </div>
+                    <div class="lesson-actions">
+                        <a href="https://www.jioaicloud.com/l/?u=GCEEGZdgyvxT7mk__3iiLuB21uIGxZPV8icH9WxgW9TzeXVUcNmQdUkLkKIremZkNL3"
+                            target="_blank" rel="noopener noreferrer" class="watch-btn">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                                <polygon points="5 3 19 12 5 21 5 3" />
+                            </svg>
+                            <span>Watch Module 21</span>
+                        </a>
+                        <button class="complete-btn-toggle" onclick="toggleLessonDone('21')">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5">
+                                <polyline points="20 6 9 17 4 12" />
+                            </svg>
+                            <span class="toggle-text">Mark Done</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Module 22 -->
+                <div class="lesson-card" id="lessonCard22" data-lesson-id="22">
+                    <div class="lesson-card-header">
+                        <div class="lesson-number">22</div>
+                        <div class="lesson-content">
+                            <div class="lesson-meta">
+                                <span class="lesson-tag tag-advanced">Measured Moves</span>
+                                <span class="lesson-duration">
+                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <circle cx="12" cy="12" r="10" />
+                                        <polyline points="12 6 12 12 16 14" />
+                                    </svg>
+                                    ~18 min
+                                </span>
+                            </div>
+                            <h3>Module 22: Projections Trading Strategy</h3>
+                            <p>Calculate precise measured moves, Fibonacci targets, and profit projection targets with mathematical accuracy.</p>
+                        </div>
+                    </div>
+                    <div class="lesson-actions">
+                        <a href="https://www.jioaicloud.com/l/?u=MgkxBLnBPX0FheUb2HAlZjaXC6XgG4E_x3ZbR-6tg83OAcHp5efLpelFA2NiABxRMZA"
+                            target="_blank" rel="noopener noreferrer" class="watch-btn">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                                <polygon points="5 3 19 12 5 21 5 3" />
+                            </svg>
+                            <span>Watch Module 22</span>
+                        </a>
+                        <button class="complete-btn-toggle" onclick="toggleLessonDone('22')">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5">
+                                <polyline points="20 6 9 17 4 12" />
+                            </svg>
+                            <span class="toggle-text">Mark Done</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Module 23 -->
+                <div class="lesson-card" id="lessonCard23" data-lesson-id="23">
+                    <div class="lesson-card-header">
+                        <div class="lesson-number">23</div>
+                        <div class="lesson-content">
+                            <div class="lesson-meta">
+                                <span class="lesson-tag tag-beginner">S&R Zones</span>
+                                <span class="lesson-duration">
+                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <circle cx="12" cy="12" r="10" />
+                                        <polyline points="12 6 12 12 16 14" />
+                                    </svg>
+                                    ~17 min
+                                </span>
+                            </div>
+                            <h3>Module 23: Support and Resistance</h3>
+                            <p>Master horizontal levels, dynamic moving averages, flip zones, and multi-timeframe key levels.</p>
+                        </div>
+                    </div>
+                    <div class="lesson-actions">
+                        <a href="https://www.jioaicloud.com/l/?u=27lrU8yLKVfSG4Xe-jQOg0B3p5Otj-u_dZ4OjBcXf4n7NpMXCwTNbVjr0R385cFehIb"
+                            target="_blank" rel="noopener noreferrer" class="watch-btn">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                                <polygon points="5 3 19 12 5 21 5 3" />
+                            </svg>
+                            <span>Watch Module 23</span>
+                        </a>
+                        <button class="complete-btn-toggle" onclick="toggleLessonDone('23')">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5">
+                                <polyline points="20 6 9 17 4 12" />
+                            </svg>
+                            <span class="toggle-text">Mark Done</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Module 24 -->
+                <div class="lesson-card" id="lessonCard24" data-lesson-id="24">
+                    <div class="lesson-card-header">
+                        <div class="lesson-number">24</div>
+                        <div class="lesson-content">
+                            <div class="lesson-meta">
+                                <span class="lesson-tag tag-intermediate">Trading Styles</span>
+                                <span class="lesson-duration">
+                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <circle cx="12" cy="12" r="10" />
+                                        <polyline points="12 6 12 12 16 14" />
+                                    </svg>
+                                    ~18 min
+                                </span>
+                            </div>
+                            <h3>Module 24: Swing Trading vs Scalping</h3>
+                            <p>Compare risk-to-reward dynamics, timeframe selection, holding duration, and choosing the optimal style for you.</p>
+                        </div>
+                    </div>
+                    <div class="lesson-actions">
+                        <a href="https://www.jioaicloud.com/l/?u=fGCPUr9Ddd73GQYrhKWaNcJPU1Q2bXsKZIy-iegNQ6NT4KvDlzMJL7mg-GVmd9B3b3F"
+                            target="_blank" rel="noopener noreferrer" class="watch-btn">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                                <polygon points="5 3 19 12 5 21 5 3" />
+                            </svg>
+                            <span>Watch Module 24</span>
+                        </a>
+                        <button class="complete-btn-toggle" onclick="toggleLessonDone('24')">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5">
+                                <polyline points="20 6 9 17 4 12" />
+                            </svg>
+                            <span class="toggle-text">Mark Done</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Module 25 -->
+                <div class="lesson-card" id="lessonCard25" data-lesson-id="25">
+                    <div class="lesson-card-header">
+                        <div class="lesson-number">25</div>
+                        <div class="lesson-content">
+                            <div class="lesson-meta">
+                                <span class="lesson-tag tag-advanced">Bear Breakouts</span>
+                                <span class="lesson-duration">
+                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <circle cx="12" cy="12" r="10" />
+                                        <polyline points="12 6 12 12 16 14" />
+                                    </svg>
+                                    ~11 min
+                                </span>
+                            </div>
+                            <h3>Module 25: Trading Strategy for Strong bear breakout</h3>
+                            <p>Capitalize on aggressive bearish impulse bars, breakdown continuations, pullbacks to moving averages, and short setups.</p>
+                        </div>
+                    </div>
+                    <div class="lesson-actions">
+                        <a href="https://www.jioaicloud.com/l/?u=1_LkBRNVhUBKbdyQ0E8H85IZ5YqEfnNXtW3c1bmJSDrLDwyNYVYuJ3ddUdxJ4hOahIb"
+                            target="_blank" rel="noopener noreferrer" class="watch-btn">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                                <polygon points="5 3 19 12 5 21 5 3" />
+                            </svg>
+                            <span>Watch Module 25</span>
+                        </a>
+                        <button class="complete-btn-toggle" onclick="toggleLessonDone('25')">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5">
+                                <polyline points="20 6 9 17 4 12" />
+                            </svg>
+                            <span class="toggle-text">Mark Done</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Module 26 -->
+                <div class="lesson-card" id="lessonCard26" data-lesson-id="26">
+                    <div class="lesson-card-header">
+                        <div class="lesson-number">26</div>
+                        <div class="lesson-content">
+                            <div class="lesson-meta">
+                                <span class="lesson-tag tag-advanced">Bull Breakouts</span>
+                                <span class="lesson-duration">
+                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <circle cx="12" cy="12" r="10" />
+                                        <polyline points="12 6 12 12 16 14" />
+                                    </svg>
+                                    ~25 min
+                                </span>
+                            </div>
+                            <h3>Module 26: Trading Strategy for Strong bull breakout</h3>
+                            <p>Trade powerful bullish breakout candles, momentum follow-through, breakout pullbacks, and trailing stops.</p>
+                        </div>
+                    </div>
+                    <div class="lesson-actions">
+                        <a href="https://www.jioaicloud.com/l/?u=8sNAlr7y1WoEQW8LorQMrJ_VXsJ_mraXPgo0xvI1EVBgHBnlWAm3fAz2nMxCcwxj0IO"
+                            target="_blank" rel="noopener noreferrer" class="watch-btn">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                                <polygon points="5 3 19 12 5 21 5 3" />
+                            </svg>
+                            <span>Watch Module 26</span>
+                        </a>
+                        <button class="complete-btn-toggle" onclick="toggleLessonDone('26')">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5">
+                                <polyline points="20 6 9 17 4 12" />
+                            </svg>
+                            <span class="toggle-text">Mark Done</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Module 27 -->
+                <div class="lesson-card" id="lessonCard27" data-lesson-id="27">
+                    <div class="lesson-card-header">
+                        <div class="lesson-number">27</div>
+                        <div class="lesson-content">
+                            <div class="lesson-meta">
+                                <span class="lesson-tag tag-advanced">Opening Session</span>
+                                <span class="lesson-duration">
+                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <circle cx="12" cy="12" r="10" />
+                                        <polyline points="12 6 12 12 16 14" />
+                                    </svg>
+                                    ~20 min
+                                </span>
+                            </div>
+                            <h3>Module 27: Trading Strategy for Opening Session</h3>
+                            <p>Master opening range breakouts, market open volatility, trap fades, and early morning momentum strategies.</p>
+                        </div>
+                    </div>
+                    <div class="lesson-actions">
+                        <a href="https://www.jioaicloud.com/l/?u=1DXvH61uk4kDgoyZD-a4efWuTdbrBuvu0E8nH8yqWncmboBe0JhTFCzKRv3ElC10VaU"
+                            target="_blank" rel="noopener noreferrer" class="watch-btn">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                                <polygon points="5 3 19 12 5 21 5 3" />
+                            </svg>
+                            <span>Watch Module 27</span>
+                        </a>
+                        <button class="complete-btn-toggle" onclick="toggleLessonDone('27')">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5">
+                                <polyline points="20 6 9 17 4 12" />
+                            </svg>
+                            <span class="toggle-text">Mark Done</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Module 28 -->
+                <div class="lesson-card" id="lessonCard28" data-lesson-id="28">
+                    <div class="lesson-card-header">
+                        <div class="lesson-number">28</div>
+                        <div class="lesson-content">
+                            <div class="lesson-meta">
+                                <span class="lesson-tag tag-advanced">Mid Day Session</span>
+                                <span class="lesson-duration">
+                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <circle cx="12" cy="12" r="10" />
+                                        <polyline points="12 6 12 12 16 14" />
+                                    </svg>
+                                    ~11 min
+                                </span>
+                            </div>
+                            <h3>Module 28: Trading Strategy for Mid Day Session</h3>
+                            <p>Learn how to navigate mid-day consolidation, identify false breakouts, and trade low-volatility lunchtime ranges.</p>
+                        </div>
+                    </div>
+                    <div class="lesson-actions">
+                        <a href="https://www.jioaicloud.com/l/?u=KmltdbN1IWm3jHB98YHtbXjC3t0098TQvSHQ3iIcEjBr3cnyDWLq_J1y-a0gaMIIPrF"
+                            target="_blank" rel="noopener noreferrer" class="watch-btn">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                                <polygon points="5 3 19 12 5 21 5 3" />
+                            </svg>
+                            <span>Watch Module 28</span>
+                        </a>
+                        <button class="complete-btn-toggle" onclick="toggleLessonDone('28')">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5">
+                                <polyline points="20 6 9 17 4 12" />
+                            </svg>
+                            <span class="toggle-text">Mark Done</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Module 29 -->
+                <div class="lesson-card" id="lessonCard29" data-lesson-id="29">
+                    <div class="lesson-card-header">
+                        <div class="lesson-number">29</div>
+                        <div class="lesson-content">
+                            <div class="lesson-meta">
+                                <span class="lesson-tag tag-advanced">Closing Session</span>
+                                <span class="lesson-duration">
+                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <circle cx="12" cy="12" r="10" />
+                                        <polyline points="12 6 12 12 16 14" />
+                                    </svg>
+                                    ~9 min
+                                </span>
+                            </div>
+                            <h3>Module 29: Trading Strategy for Closing Session</h3>
+                            <p>Master end-of-day market momentum, closing bell positioning, squeeze moves, and post-2:30 PM reversals.</p>
+                        </div>
+                    </div>
+                    <div class="lesson-actions">
+                        <a href="https://www.jioaicloud.com/l/?u=aTSezgkpegZzVmHRRmTxzZnbiwRYpohFbKLymLFHOsbdESpHxBY5jouYHE8WOOBmdoB"
+                            target="_blank" rel="noopener noreferrer" class="watch-btn">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                                <polygon points="5 3 19 12 5 21 5 3" />
+                            </svg>
+                            <span>Watch Module 29</span>
+                        </a>
+                        <button class="complete-btn-toggle" onclick="toggleLessonDone('29')">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5">
+                                <polyline points="20 6 9 17 4 12" />
+                            </svg>
+                            <span class="toggle-text">Mark Done</span>
+                        </button>
+                    </div>
+                </div>
 
             </div>
         </section>
+
+        <!-- Mobile Bottom Dock (App Bar) -->
+        <div class="mobile-bottom-dock">
+            <a href="index.html" class="dock-tab">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                </svg>
+                <span>Home</span>
+            </a>
+            <a href="#courseSection" class="dock-tab active">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polygon points="5 3 19 12 5 21 5 3" />
+                </svg>
+                <span>Lessons</span>
+            </a>
+            <a href="#courseProgressCard" class="dock-tab">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+                </svg>
+                <span>Progress</span>
+            </a>
+            <a href="javascript:void(0)" onclick="handleLogoutClick()" class="dock-tab">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
+                    <polyline points="16 17 21 12 16 7" />
+                    <line x1="21" y1="12" x2="9" y2="12" />
+                </svg>
+                <span>Logout</span>
+            </a>
+        </div>
 
         <!-- Footer -->
         <footer class="dash-footer">
-            <p>© 2026 Premium Learning. All rights reserved.</p>
+            <p>© 2026 VIP Learning. All rights reserved.</p>
         </footer>
 
     </div>
 
-
     <script>
-
-        // Check login — SAME LOGIC AS ORIGINAL
+        // =========================================================================
+        // Check login — EXACT ORIGINAL LOGIC
+        // =========================================================================
         if (sessionStorage.getItem("loggedIn") !== "true") {
-
             window.location.href = "login.html";
-
         }
 
+        // Dynamic User Display
+        const currentUser = sessionStorage.getItem("currentUser") || "Student";
+        const userNameDisplay = document.getElementById("userNameDisplay");
+        const userAvatar = document.getElementById("userAvatar");
+        const welcomeHeading = document.getElementById("welcomeHeading");
 
-        // Logout — SAME LOGIC AS ORIGINAL
-        document
-            .getElementById("logoutBtn")
-            .addEventListener("click", function () {
+        if (userNameDisplay) userNameDisplay.textContent = currentUser;
+        if (userAvatar) userAvatar.textContent = currentUser.charAt(0).toUpperCase();
+        if (welcomeHeading && currentUser !== "Student") {
+            welcomeHeading.textContent = `Welcome, ${currentUser}`;
+        }
 
-                sessionStorage.removeItem("loggedIn");
+        // =========================================================================
+        // Logout — EXACT ORIGINAL LOGIC
+        // =========================================================================
+        function handleLogoutClick() {
+            sessionStorage.removeItem("loggedIn");
+            sessionStorage.removeItem("currentUser");
+            window.location.href = "index.html";
+        }
 
-                window.location.href = "index.html";
+        document.getElementById("logoutBtn").addEventListener("click", handleLogoutClick);
 
+        // =========================================================================
+        // Interactive Progress Tracker (localStorage)
+        // =========================================================================
+        const lessonCards = document.querySelectorAll('.lesson-card');
+        const totalModules = lessonCards.length;
+        const PROGRESS_KEY = "premium_course_progress";
+
+        function getCompletedList() {
+            try {
+                const stored = localStorage.getItem(PROGRESS_KEY);
+                return stored ? JSON.parse(stored) : [];
+            } catch (e) {
+                return [];
+            }
+        }
+
+        function saveCompletedList(list) {
+            localStorage.setItem(PROGRESS_KEY, JSON.stringify(list));
+        }
+
+        function updateProgress() {
+            const completed = getCompletedList();
+            const count = completed.length;
+            const percent = totalModules > 0 ? Math.round((count / totalModules) * 100) : 0;
+
+            const progressBarFill = document.getElementById("progressBarFill");
+            const progressPercentLabel = document.getElementById("progressPercentLabel");
+            const progressStatusText = document.getElementById("progressStatusText");
+            const progressHeaderTitle = document.getElementById("progressHeaderTitle");
+
+            if (progressBarFill) progressBarFill.style.width = percent + "%";
+            if (progressPercentLabel) progressPercentLabel.textContent = percent + "%";
+            if (progressStatusText) {
+                progressStatusText.textContent = `${count} of ${totalModules} Modules Completed`;
+            }
+
+            if (count === totalModules && totalModules > 0) {
+                if (progressHeaderTitle) progressHeaderTitle.textContent = "🏆 100% Completed!";
+            } else {
+                if (progressHeaderTitle) progressHeaderTitle.textContent = "Course Progress";
+            }
+
+            // Update each card's status
+            lessonCards.forEach(card => {
+                const id = card.getAttribute("data-lesson-id");
+                const toggleBtn = card.querySelector(".complete-btn-toggle");
+                const toggleText = card.querySelector(".toggle-text");
+                const isDone = completed.includes(id);
+
+                if (isDone) {
+                    card.classList.add("completed");
+                    if (toggleBtn) toggleBtn.classList.add("checked");
+                    if (toggleText) toggleText.textContent = "Completed ✓";
+                } else {
+                    card.classList.remove("completed");
+                    if (toggleBtn) toggleBtn.classList.remove("checked");
+                    if (toggleText) toggleText.textContent = "Mark Done";
+                }
             });
+        }
 
+        function toggleLessonDone(id) {
+            let completed = getCompletedList();
+            if (completed.includes(id)) {
+                completed = completed.filter(item => item !== id);
+            } else {
+                completed.push(id);
+            }
+            saveCompletedList(completed);
+            updateProgress();
+        }
+
+        // Initialize progress tracker
+        updateProgress();
+
+        // =========================================================================
+        // Live Instant Search
+        // =========================================================================
+        const searchInput = document.getElementById("lessonSearchInput");
+        if (searchInput) {
+            searchInput.addEventListener("input", function (e) {
+                const query = e.target.value.toLowerCase().trim();
+                lessonCards.forEach(card => {
+                    const content = card.textContent.toLowerCase();
+                    if (content.includes(query)) {
+                        card.style.display = "flex";
+                    } else {
+                        card.style.display = "none";
+                    }
+                });
+            });
+        }
+
+        // =========================================================================
         // Entrance animations
-        window.addEventListener('load', function() {
+        // =========================================================================
+        window.addEventListener('load', function () {
             document.getElementById('dashNav').classList.add('animate-in');
             document.getElementById('dashHero').classList.add('animate-in');
 
-            const cards = document.querySelectorAll('.lesson-card');
-            cards.forEach(function(card, index) {
-                setTimeout(function() {
+            lessonCards.forEach(function (card, index) {
+                setTimeout(function () {
                     card.classList.add('animate-in');
-                }, 200 + (index * 150));
+                }, 150 + (index * 120));
             });
         });
-
     </script>
 
 </body>
