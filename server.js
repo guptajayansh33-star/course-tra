@@ -9,8 +9,13 @@ const PORT = process.env.PORT || 3000;
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Serve frontend files
-app.use(express.static(path.join(__dirname, "public")));
+// Serve frontend files (including .well-known for TWA Android assetlinks)
+app.use(express.static(path.join(__dirname, "public"), { dotfiles: "allow" }));
+
+app.get("/.well-known/assetlinks.json", (req, res) => {
+    res.setHeader("Content-Type", "application/json");
+    res.sendFile(path.join(__dirname, "public", ".well-known", "assetlinks.json"));
+});
 
 
 const users = [
